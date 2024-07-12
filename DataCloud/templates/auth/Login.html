@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+<head>
+    <link rel="stylesheet" href="{% static 'css/auth/main.css' %}">
+</head>
+<body>
+    <div class="container-fluid">
+        <div  class="main-page-login ">
+            <div class="row">
+                <div class='logo-section col-lg-5 col-12'>
+                    <div class='logo-grope'>
+                        <div class='logo'>
+                         <img src="{% static 'image/logo/c-1.png' %}"  alt="logo"/> 
+                        </div>
+                        <div class='title'>
+                            <div class='text'><h5>Hybrid-cloud Database</h5></div>
+                            <div class='h'><h4>MANAGEMENT</h4></div>
+                        </div>
+                    </div>
+                    <div class='bow'>
+                       <img src="{% static 'image/logo/r-1.png' %}" alt="bow"/>
+                    </div>
+
+                    <div class='buttom-img '>
+                      <img src="{% static 'image/logo/g.png' %}" alt="buttom_img"/>
+                    </div>
+                </div>
+                <div  class='formLogin-section col-lg-7 col-12'>
+                    <div  class='color'>
+                        <div  class='titel'>
+                            <h3 class='welcome'>Welcome to Start</h3>
+                        </div>
+                        <div  class='text'>
+                            <h6 class="new-here">New Here? <a class="create-account-top" href="{% url 'Dashboard' %}">Dashboard</a></h6>
+                        </div>
+
+                        <div  class='mine-body'>
+                            <div class='form'>
+                                <div  class='mine-body-text'>
+                                    <h4>Sign in</h4>
+                                </div>
+                                <div  class='faq'>
+                                    <h6>Check our <a  href="#">FAQ</a></h6>
+                                </div>
+                                
+                                <div class='body'>
+                                    <form method="POST" action="{% url 'Login' %}">
+                                        {% csrf_token %}
+                                        <div class="input">
+                                            <label  class="form-label" htmlFor="Full Name">
+                                            username
+                                            </label>
+                                            <input
+                                                type="username"
+                                                name="username"
+                                                class="form-control"
+                                            />
+                                        </div>
+                                        <div  class="">
+                                            <label  class="form-label" htmlFor="Full Name">
+                                            Password
+                                            </label>
+                                            <input
+                                                type="password"
+                                                name="password"
+                                                class="form-control"
+                                            />
+                                        </div>
+                                        <div  class='login-btn'>
+                                            <Button type='submit'>Log in</Button>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div  class='google-btn'>
+                                    <Button variant="primary"><img src="{% static 'image/login-page/form/google.png' %}" alt="google" /> Or Sign in with Google</Button>
+                                </div>
+                                <div class="forgot-password">
+                                    <a class="f" href="">forgot your password</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div  class='create-account-btn'>
+                            <a href="{% url 'Register' %}">
+                                <Button variant="primary">Create an Account</Button>
+                            </a>
+                        </div>
+
+                        <div  class='terms'>
+                            <p class="p"><a  >Terms</a></p>
+                            <p class="p"> <a  >Plans</a></p>
+                            <p class="p"><a  >Contact Us</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+{% endblock %}

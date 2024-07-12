@@ -1,0 +1,206 @@
+
+
+.main-page-login .logo-section{
+    background: #E8E8E8;
+    height: 100vh;
+
+}
+
+.main-page-login .logo-section .logo{
+    display: flex;
+    justify-content: center;
+}
+
+.main-page-login .logo-section .logo img{
+    width: 30%;
+}
+.main-page-login .logo-section .logo-grope{
+    margin-top: 3rem;
+}
+.main-page-login .logo-section .title{
+    margin-top: 1rem;
+}
+.main-page-login .logo-section .title .text{
+    display: flex;
+    justify-content: center;
+    color: rgba(128, 128, 143, 1);
+}
+
+.main-page-login .logo-section .title .h{
+    display: flex;
+    justify-content: center;
+    color: rgba(128, 128, 143, 1);
+}
+
+
+.main-page-login .logo-section .bow img{
+   width: 100%;
+   margin-top: 25px;
+}
+.main-page-login .logo-section .buttom-img{
+    position: absolute;
+    bottom: 0;
+}
+
+.main-page-login .logo-section .buttom-img img{
+    width: 60%;
+
+}
+
+
+
+
+
+.main-page-login .formLogin-section {
+    background-image: url(../../image//login-page/form/b2.png);
+    background-position: center;
+    background-size: cover;
+    padding: 0;
+
+}
+.main-page-login .formLogin-section .color{
+    background: linear-gradient(80.18deg, rgba(33, 37, 96, 0.95) 0%, rgba(81, 115, 185, 0.95) 100%);
+    width: 100%;
+    height: 100vh;
+}
+
+.main-page-login .formLogin-section .titel{
+    display: flex;
+    justify-content: center;
+    padding-top: 3.5rem;
+}
+.main-page-login .formLogin-section .titel .welcome{
+    color: white;;
+}
+.main-page-login .formLogin-section .text{
+    display: flex;
+    justify-content: center;
+}
+
+.main-page-login .formLogin-section .text .new-here{
+    color: #A7A8BB;
+}
+
+.main-page-login .formLogin-section .text .new-here .create-account-top{
+    color: #5884B9;
+    text-decoration: none;
+}
+.main-page-login .mine-body{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+
+}
+.main-page-login .mine-body .form{
+    padding: 20px 10px 10px 10px;
+    background: #FFFFFF;
+    width: 60%;
+    box-shadow: 0px 0px 19px 0px #EFF0F1B2;
+    border-radius: 10px;
+
+}
+.main-page-login .mine-body .mine-body-text{
+    display: flex;
+    justify-content: center;
+}
+
+.main-page-login .mine-body .mine-body-text {
+    display: flex;
+    justify-content: center;
+}
+.main-page-login .mine-body .faq{
+    display: flex;
+    justify-content: center;
+    color: #B5B5C3;
+
+}
+.main-page-login .mine-body .faq a{
+    text-decoration: none;
+    color: #5884B9;
+    font-weight: bold;
+
+
+}
+
+.main-page-login .mine-body .form .body{
+    display: flex;
+    justify-content: center;
+}
+.main-page-login .mine-body .form .body input{
+    background: #E9E9E9;
+    box-shadow: none;
+}
+
+
+.main-page-login .mine-body .form .body input{
+    background: #E9E9E9;
+    box-shadow: none;
+}
+
+.main-page-login .mine-body .form .body .login-btn{
+    display: flex;
+    justify-content: center;
+}
+.main-page-login .mine-body .form .body .login-btn Button{
+    background: #5173B9;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    margin: 10px;
+    border-radius: 4px;
+    font-weight: 400;
+    
+}
+.main-page-login .mine-body .google-btn{
+    margin: 10px 10px 30px 10px;
+}
+.main-page-login .mine-body .google-btn Button{
+    background: #E1F0FF;
+    color: #5884B9;
+    border: none;
+    font-weight: 500;
+
+}
+.main-page-login .formLogin-section  .mine-body .google-btn img{
+    width: 10%;
+}
+
+.main-page-login .formLogin-section .forgot-password{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.main-page-login .formLogin-section .forgot-password .f{
+    text-decoration: none;
+    color: #5884B9;
+    font-weight: 500;
+}
+.main-page-login .formLogin-section .terms{
+    display: flex;
+    justify-content: center;
+    color: white;
+}
+
+.main-page-login .formLogin-section .terms .p{
+    margin: 20px;
+
+}
+
+
+@media (max-width: 750px) { 
+    .main-page-login .logo-section .bow img{
+        display: none;
+     }
+     .main-page-login .logo-section .buttom-img img{
+        width: 100%;
+    
+    }
+}
+@media (max-width: 500px) { 
+    .main-page-login .mine-body .form{
+        width: 90%;
+    }
+    .main-page-login .formLogin-section .titel{
+        padding-top: 10rem;
+    }
+}

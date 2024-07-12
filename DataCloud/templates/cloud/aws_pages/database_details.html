@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Database Details</title>
+</head>
+<body>
+    <h1>Database Details</h1>
+    {% if db_details %}
+        <ul>
+        {% if db_type == 'RDS' %}
+            <li>DBInstanceIdentifier: {{ db_details.DBInstanceIdentifier }}</li>
+            <li>DBInstanceClass: {{ db_details.DBInstanceClass }}</li>
+            <li>Engine: {{ db_details.Engine }}</li>
+            <li>DBInstanceStatus: {{ db_details.DBInstanceStatus }}</li>
+            <li>MasterUsername: {{ db_details.MasterUsername }}</li>
+            <li>Endpoint: {{ db_details.Endpoint.Address }}:{{ db_details.Endpoint.Port }}</li>
+            <li>AllocatedStorage: {{ db_details.AllocatedStorage }} GB</li>
+            <li>InstanceCreateTime: {{ db_details.InstanceCreateTime }}</li>
+            <li>PreferredBackupWindow: {{ db_details.PreferredBackupWindow }}</li>
+            <li>PreferredMaintenanceWindow: {{ db_details.PreferredMaintenanceWindow }}</li>
+            <li>BackupRetentionPeriod: {{ db_details.BackupRetentionPeriod }} days</li>
+            <li>MultiAZ: {{ db_details.MultiAZ }}</li>
+            <li>EngineVersion: {{ db_details.EngineVersion }}</li>
+            <li>AutoMinorVersionUpgrade: {{ db_details.AutoMinorVersionUpgrade }}</li>
+            <li>PubliclyAccessible: {{ db_details.PubliclyAccessible }}</li>
+            <li>StorageType: {{ db_details.StorageType }}</li>
+            <li>StorageEncrypted: {{ db_details.StorageEncrypted }}</li>
+            <!-- Add more RDS details here as needed -->
+        {% elif db_type == 'DocumentDB' %}
+            <li>DBClusterIdentifier: {{ db_details.DBClusterIdentifier }}</li>
+            <li>Status: {{ db_details.Status }}</li>
+            <li>Engine: {{ db_details.Engine }}</li>
+            <li>EngineVersion: {{ db_details.EngineVersion }}</li>
+            <li>Port: {{ db_details.Port }}</li>
+            <li>MasterUsername: {{ db_details.MasterUsername }}</li>
+            <li>PreferredBackupWindow: {{ db_details.PreferredBackupWindow }}</li>
+            <li>BackupRetentionPeriod: {{ db_details.BackupRetentionPeriod }} days</li>
+            <li>PreferredMaintenanceWindow: {{ db_details.PreferredMaintenanceWindow }}</li>
+            <li>StorageEncrypted: {{ db_details.StorageEncrypted }}</li>
+            <li>Endpoint: {{ db_details.Endpoint }}</li>
+            <!-- Add more DocumentDB details here as needed -->
+        {% elif db_type == 'DynamoDB' %}
+            <li>TableName: {{ db_details.TableName }}</li>
+            <li>TableStatus: {{ db_details.TableStatus }}</li>
+            <li>ItemCount: {{ db_details.ItemCount }}</li>
+            <li>CreationDateTime: {{ db_details.CreationDateTime }}</li>
+            <li>ProvisionedThroughput: 
+                <ul>
+                    <li>ReadCapacityUnits: {{ db_details.ProvisionedThroughput.ReadCapacityUnits }}</li>
+                    <li>WriteCapacityUnits: {{ db_details.ProvisionedThroughput.WriteCapacityUnits }}</li>
+                </ul>
+            </li>
+            <li>TableSizeBytes: {{ db_details.TableSizeBytes }} bytes</li>
+            <!-- Add more DynamoDB details here as needed -->
+        {% elif db_type == 'ElastiCache' %}
+            <li>CacheClusterId: {{ db_details.CacheClusterId }}</li>
+            <li>Engine: {{ db_details.Engine }}</li>
+            <li>CacheClusterStatus: {{ db_details.CacheClusterStatus }}</li>
+            <li>NumCacheNodes: {{ db_details.NumCacheNodes }}</li>
+            <li>PreferredMaintenanceWindow: {{ db_details.PreferredMaintenanceWindow }}</li>
+            <li>CacheNodeType: {{ db_details.CacheNodeType }}</li>
+            <li>EngineVersion: {{ db_details.EngineVersion }}</li>
+            <li>AutoMinorVersionUpgrade: {{ db_details.AutoMinorVersionUpgrade }}</li>
+            <!-- Add more ElastiCache details here as needed -->
+        {% elif db_type == 'MemoryDB' %}
+            <li>ClusterName: {{ db_details.ClusterName }}</li>
+            <li>Status: {{ db_details.Status }}</li>
+            <li>EngineVersion: {{ db_details.EngineVersion }}</li>
+            <li>NodeType: {{ db_details.NodeType }}</li>
+            <li>NumberOfShards: {{ db_details.NumberOfShards }}</li>
+            <li>NumberOfReplicasPerShard: {{ db_details.NumberOfReplicasPerShard }}</li>
+            <li>ClusterEndpoint: {{ db_details.ClusterEndpoint.Address }}:{{ db_details.ClusterEndpoint.Port }}</li>
+            <!-- Add more MemoryDB details here as needed -->
+        {% elif db_type == 'Neptune' %}
+            <li>DBClusterIdentifier: {{ db_details.DBClusterIdentifier }}</li>
+            <li>Status: {{ db_details.Status }}</li>
+            <li>Engine: {{ db_details.Engine }}</li>
+            <li>EngineVersion: {{ db_details.EngineVersion }}</li>
+            <li>Port: {{ db_details.Port }}</li>
+            <li>PreferredBackupWindow: {{ db_details.PreferredBackupWindow }}</li>
+            <li>BackupRetentionPeriod: {{ db_details.BackupRetentionPeriod }} days</li>
+            <li>PreferredMaintenanceWindow: {{ db_details.PreferredMaintenanceWindow }}</li>
+            <li>StorageEncrypted: {{ db_details.StorageEncrypted }}</li>
+            <li>Endpoint: {{ db_details.Endpoint }}</li>
+            <!-- Add more Neptune details here as needed -->
+        {% elif db_type == 'QLDB' %}
+            <li>Name: {{ db_details.Name }}</li>
+            <li>State: {{ db_details.State }}</li>
+            <li>CreationDateTime: {{ db_details.CreationDateTime }}</li>
+            <li>Arn: {{ db_details.Arn }}</li>
+            <li>DeletionProtection: {{ db_details.DeletionProtection }}</li>
+            <!-- Add more QLDB details here as needed -->
+        {% elif db_type == 'Timestream' %}
+            <li>TableName: {{ db_details.TableName }}</li>
+            <li>TableStatus: {{ db_details.TableStatus }}</li>
+            <li>RetentionProperties:
+                <ul>
+                    <li>MemoryStoreRetentionPeriodInHours: {{ db_details.RetentionProperties.MemoryStoreRetentionPeriodInHours }}</li>
+                    <li>MagneticStoreRetentionPeriodInDays: {{ db_details.RetentionProperties.MagneticStoreRetentionPeriodInDays }}</li>
+                </ul>
+            </li>
+            <li>CreationTime: {{ db_details.CreationTime }}</li>
+            <li>LastUpdatedTime: {{ db_details.LastUpdatedTime }}</li>
+            <!-- Add more Timestream details here as needed -->
+        {% endif %}
+        </ul>
+    {% else %}
+        <p>No details available for this database.</p>
+    {% endif %}
+
+
+    <div class='back-btn'>
+        <a href="{% url 'db_connection' %}">
+            <button>Connection</button>
+        </a>
+    </div>
+
+    <br />
+    <div class='back-btn'>
+        <a href="{% url 'show_aws_databases' %}">
+            <button>Back to Database List</button>
+        </a>
+    </div>
+
+
+</body>
+</html>

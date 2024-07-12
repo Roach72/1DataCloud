@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AWS Databases</title>
+</head>
+<body>
+    <h1>RDS Databases</h1>
+    {% if databases.RDS %}
+        <ul>
+        {% for database in databases.RDS %}
+            <li><a href="{% url 'database_details' db_type='RDS' db_identifier=database %}">{{ database }}</a></li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No RDS databases to display.</p>
+    {% endif %}
+    
+    <h1>DocumentDB Databases</h1>
+    {% if databases.DocumentDB %}
+        <ul>
+        {% for database in databases.DocumentDB %}
+            <li><a href="{% url 'database_details' db_type='DocumentDB' db_identifier=database %}">{{ database }}</a></li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No DocumentDB databases to display.</p>
+    {% endif %}
+    
+    <h1>DynamoDB Tables</h1>
+    {% if databases.DynamoDB %}
+        <ul>
+        {% for table in databases.DynamoDB %}
+            <li><a href="{% url 'database_details' db_type='DynamoDB' db_identifier=table %}">{{ table }}</a></li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No DynamoDB tables to display.</p>
+    {% endif %}
+    
+    <h1>ElastiCache Clusters</h1>
+    {% if databases.ElastiCache %}
+        <ul>
+        {% for cluster in databases.ElastiCache %}
+            <li><a href="{% url 'database_details' db_type='ElastiCache' db_identifier=cluster %}">{{ cluster }}</a></li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No ElastiCache clusters to display.</p>
+    {% endif %}
+    
+    <h1>MemoryDB Clusters</h1>
+    {% if databases.MemoryDB %}
+        <ul>
+        {% for cluster in databases.MemoryDB %}
+            <li><a href="{% url 'database_details' db_type='MemoryDB' db_identifier=cluster %}">{{ cluster }}</a></li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No MemoryDB clusters to display.</p>
+    {% endif %}
+    
+    <h1>Neptune Clusters</h1>
+    {% if databases.Neptune %}
+        <ul>
+        {% for cluster in databases.Neptune %}
+            <li><a href="{% url 'database_details' db_type='Neptune' db_identifier=cluster %}">{{ cluster }}</a></li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No Neptune clusters to display.</p>
+    {% endif %}
+    
+    <h1>QLDB Ledgers</h1>
+    {% if databases.QLDB %}
+        <ul>
+        {% for ledger in databases.QLDB %}
+            <li><a href="{% url 'database_details' db_type='QLDB' db_identifier=ledger %}">{{ ledger }}</a></li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No QLDB ledgers to display.</p>
+    {% endif %}
+    
+    <h1>Timestream Tables</h1>
+    {% if databases.Timestream %}
+        <ul>
+        {% for table in databases.Timestream %}
+            <li><a href="{% url 'database_details' db_type='Timestream' db_identifier=table %}">{{ table }}</a></li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No Timestream tables to display.</p>
+    {% endif %}
+
+    <div class='create-account-btn'>
+        <a href="{% url 'AWS' %}">
+            <button variant="primary">AWS</button>
+        </a>
+    </div>
+    <br>
+</body>
+</html>

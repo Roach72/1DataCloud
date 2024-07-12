@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Database Connection</title>
+</head>
+<body>
+
+    <h1>Enter Database Connection Details</h1>
+    {% if messages %}
+    <ul>
+        {% for message in messages %}
+            <p {% if message.tags %} class="{{ message.tags }}"{% endif %}>
+                Something is wrong, please check the information
+                <li>check Host</li>
+                <li>check Port</li>
+                <li>check Passward</li>
+                <li>check Username</li>
+                <li>check Db_name</li>
+            </p>
+        {% endfor %}
+    </ul>
+   {% endif %}
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Connect</button>
+    </form>
+</body>
+</html>

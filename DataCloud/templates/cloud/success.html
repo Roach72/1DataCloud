@@ -1,0 +1,17 @@
+<!-- templates/cloud/success.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Success</title>
+</head>
+<body>
+    <h1>Database Instance Created Successfully</h1>
+    <p>Service Name: {{ instance_info['DBInstanceIdentifier'] }}</p>
+    <p>Endpoint: {{ instance_info['Endpoint']['Address'] }}</p>
+    <p>Port: {{ instance_info['Endpoint']['Port'] }}</p>
+    <p>Username: {{ instance_info['MasterUsername'] }}</p>
+    <p>Database Name: {{ instance_info['DBName'] }}</p>
+
+    <a href="{% url 'db_connection' %}">Connect to this Database</a>
+</body>
+</html>

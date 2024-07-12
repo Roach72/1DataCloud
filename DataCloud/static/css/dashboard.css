@@ -1,0 +1,120 @@
+.dashboard{
+    margin: 0;
+    padding: 0;
+}
+.dashboard .side-bar{
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0px 4px 50px 0px rgba(0, 0, 0, 0.25);
+    height: 100vh;
+}
+.dashboard  .side-bar .logo {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.dashboard .side-bar .logo img{
+   display: flex;
+   justify-content: center;
+   width: 80px;
+}
+
+.dashboard .side-bar .settings{
+    display: flex;
+    justify-content: center;
+    margin-top: 28rem;
+}
+.dashboard  .side-bar .settings img{
+    width: 50px;
+}
+
+/*--main-page content--*/
+.dashboard .content{
+    background-image: url(../image/dashboard/b.png);
+    padding: 0;
+}
+
+.dashboard .content .color{
+    background: linear-gradient(80.18deg, rgba(33, 37, 96, 0.95) 0%, rgba(81, 115, 185, 0.95) 100%);
+    width: 100%;
+    height: 100vh;
+}
+.dashboard .center{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 85vh;
+}
+
+.dashboard .center .titel{
+
+    color: white;
+    margin-bottom: 10px;
+}
+.dashboard .center .text{
+
+    color: white;
+    margin-bottom: 10px;
+
+}
+.dashboard .center .connect-database-btn{
+
+}
+
+.dashboard .center .connect-database-btn Button{
+    background: rgba(255, 166, 33, 1);
+    border: none;
+    color: white;
+    border-radius: 3px;
+
+}
+
+
+.nav-bar{
+    width: 100%;
+}
+
+
+.nav-bar .nav-item a i{
+   color: rgba(81, 115, 185, 0.95);
+   background: rgba(194, 201, 230, 1);
+   border-radius: 10px;
+   padding: 9px;
+
+}
+.nav-bar .search-body{
+    background: rgba(194, 201, 230, 1);
+    box-shadow: none;
+}
+.nav-bar img{
+    width: 4%;
+    border-radius: 50%;
+}
+
+.nav-bar .navbar-brand {
+    color: white;
+}
+.nav-bar .icon {
+    padding: 9px 14px !important;
+}
+.dark-mode .side-bar{
+    background: rgba(37, 37, 37, 1);
+}
+
+.dark-mode .content .color{
+    background: linear-gradient(80.18deg, rgba(0, 0, 0, 0.98) 0%, rgba(48, 49, 50, 0.98) 100%);
+}
+
+
+@media (max-width: 991.98px) { 
+    .dashboard  .side-bar{
+        display: none;
+    }
+    .dashboard  .content{
+        width: 100%;
+    }
+    
+ }
+
+

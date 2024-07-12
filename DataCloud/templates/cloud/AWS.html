@@ -1,0 +1,397 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<head>
+    <link rel="stylesheet" href="{% static 'css/cloud/aws.css' %}">
+</head>
+
+<div class='main-database_pages container-fluid row'>
+    <div class='side-bar col-1'>
+        <div class='all'>
+            <div class='logo'>
+                <img src="{% static 'image/logo/c-1.png' %}"  alt="logo"/> 
+            </div>
+            <div class="logo-contant">
+                <div class='database-logos'>
+                    <a href='/databasepages'>
+                        <img src="{% static 'image/database/aws.png' %}"  alt="logo"/> 
+                    </a>
+                </div>
+                <div class='database-logos'>
+                   <a href='/dataBasepagesazure'>
+                    <img src="{% static 'image/database/azu.png' %}"  alt="logo"/> 
+                    </a>
+                </div>
+                <div class='database-logos'>
+                    <a href='/databasepagesgoogle'>
+                        <img src="{% static 'image/database/goo.png' %}"  alt="logo"/> 
+                    </a>
+                </div>
+                <div class='database-logos'>
+                   <a href='/databasepagesmongodb'>
+                    <img src="{% static 'image/database/mang.png' %}"  alt="logo"/> 
+                    </a>
+                </div>
+                <div class='database-logos'>
+                   <a href='/databasepagesonprem'>
+                    <img src="{% static 'image/database/o.png' %}"  alt="logo"/> 
+                     </a>
+                </div>
+            </div>
+            <div class='settings-database'>
+                <img src="{% static 'image/dashboard/Settings.png' %}"  alt="logo"/> 
+            </div>
+        </div>
+    </div>
+
+    <div class='content col-11'>
+        <div class='color'>
+            <div class='nav-bar '>
+                <nav class="navbar navbar-expand-lg">
+                    <div class="container-fluid">
+                      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                      </button>
+                      <div class="body-nav collapse navbar-collapse" id="navbarSupportedContent">
+                        <form class="d-flex" role="search">
+                          <input class="search-body form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        </form>
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                          <li class="nav-item">
+                            <a class="nav-link" href="#"><i class="icon-form fa-solid fa-magnifying-glass"></i></a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="#"><i class="icon fa-solid fa-exclamation"></i></a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="#"><i class="fa-solid fa-bell"></i></a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="#"><i class="fa-solid fa-calendar"></i></a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="#"><i class="fa-solid fa-moon"></i></a>
+                          </li>
+                          {% if user.is_authenticated %}
+                            <li class="nav-item">
+                              <a class="nav-link" href="{% url 'Logout' %}"><i class="fa-solid fa-right-from-bracket"></i></a>
+                            </li>
+                          {% else %}
+                            <li class="nav-item">
+                              <a class="nav-link" href="{% url 'Login' %}"><i class="fa-solid fa-right-to-bracket"></i></a>
+                            </li>
+                          {% endif %}
+                        </ul>
+                      </div>
+                      <a class="navbar-brand" href="#">1DataCloud</a>
+                      <img class="acount-img" src="{% static 'image/dashboard/p.jpg' %}" alt="Settings"/>
+                    </div>
+                  </nav>
+            </div>
+
+            <div class='main-page-content container-fluid'>
+                <div class='row'>
+                    <div class='col-md-12'>
+                        <button class='btn-d btn btn-outline-light'>Dashboard</button>
+                        <button class='btn-data btn btn-outline-light'>Load Test</button>
+                        <button class='btn-data btn btn-outline-light'>Monitor</button>
+                        <button class='btn-data btn btn-outline-light'>Reports</button>
+                    </div>
+                </div>
+                <div class='row'>
+                    <div class='col-md-3 col-12 col'>
+                        <div class='servies'>
+                            <div class='header'>
+                                <h5>Services</h5>
+                            </div>
+                            <div class='progress-container'>
+                                <div class='progress'>
+                                    <div class='progress-bar'></div>
+                                </div>
+                                <div class='total'>
+                                    <div>Total Services</div>
+                                </div>
+                                <div class='curren'>
+                                <h5></h5>
+                                </div>
+                            </div>
+                            <div class='footer d-flex justify-content-evenly'>
+                                <p class='total-warnings'><i class="fa-solid fa-circle-dot"></i> 15 Total warnings</p>
+                                <p class='total-alerts'><i class="fa-solid fa-circle-dot"></i> 5 Total alerts</p>
+                            </div>
+                        </div>
+
+                        <div class='database-section row'>
+                            <div class='data col-md-6 col-4'>
+                                <div class='img-box'>
+                                    <img src="{% static 'image/database/pages/amazon_rds.png' %}"  alt="logo"/> 
+                                </div>
+                            </div>
+                            <div class='data col-md-6 col-4'>
+                                <div class='img-box'>
+                                    <img src="{% static 'image/database/pages/amazon_documentdb.png' %}"  alt="logo"/> 
+                                </div>
+                            </div>
+                            <div class='data col-md-6 col-4'>
+                                <div class='img-box'>
+                                    <img src="{% static 'image/database/pages/amazon-dynamodb.png' %}"  alt="logo"/> 
+                                </div>
+                            </div>
+                            <div class='data col-md-6 col-4'>
+                                <div class='img-box'>
+                                    <img src="{% static 'image/database/pages/amazon_elasticachet.png' %}"  alt="logo"/> 
+                                </div>
+                            </div>
+                            <div class='data col-md-6 col-4'>
+                                <div class='img-box'>
+                                    <img src="{% static 'image/database/pages/amazon_redshift.png' %}"  alt="logo"/> 
+                                </div>
+                            </div>
+                            <div class='data col-md-6 col-4'>
+                                <div class='img-box'>
+                                    <img src="{% static 'image/database/pages/amazon_neptune.png' %}"  alt="logo"/> 
+                                </div>
+                            </div>
+                            <div class='data col-md-6 col-4'>
+                                <div class='img-box'>
+                                    <img src="{% static 'image/database/pages/aws_db.png' %}"  alt="logo"/> 
+                                </div>
+                            </div>
+                            <div class='data col-md-6 col-4'>
+                                <div class='img-box'>
+                                    <img src="{% static 'image/database/pages/aws_db.png' %}"  alt="logo"/> 
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class='col-md-9 col-12 main-content-data'>
+                        <div class='head'>
+                            <div class='h'>
+                                <h6>Services List</h6>
+                            </div>
+                            <div class='b'></div>
+                            <div class='b'></div>
+                            <div class='b'></div>
+                            <div class='b-2'>
+                                <a href='/register'>
+                                    <button class='db-btn btn btn-primary'>DB Connection</button>
+                                </a>
+                            </div>
+                        </div>
+                        <div class='content-data'>
+                            <!--  AWS.html  -->
+                            <div class='data'>
+                                <h1>Select Database Service</h1>
+                                <form method="post">
+                                    {% csrf_token %}
+                                    <label for="service_name">Select Database Service:</label>
+                                    <select name="service_name" id="service_name">
+                                        <option value="RDS">Amazon RDS</option>
+                                        <option value="DocumentDB">Amazon DocumentDB</option>
+                                        <option value="DynamoDB">Amazon DynamoDB</option>
+                                        <option value="ElastiCache">Amazon ElastiCache</option>
+                                        <option value="AmazonKeyspaces">Amazon Keyspaces</option>
+                                        <option value="MemoryDB">Amazon MemoryDB</option>
+                                        <option value="Neptune">Amazon Neptune</option>
+                                        <option value="QLDB">Amazon QLDB</option>
+                                        <option value="Timestream">Amazon Timestream</option>
+                                    </select>
+                                    <br><br>
+                                    <button type="submit">Continue</button>
+                                </form>
+                                <br>
+                                <div  class='create-account-btn'>
+                                    <a href="{% url 'db_connection' %}">
+                                        <Button variant="primary">Connect DataBase</Button>
+                                    </a>
+                                </div>
+                                <br>
+
+                                <div  class='create-account-btn'>
+                                    <a href="{% url 'show_db_contents' %}">
+                                        <Button variant="primary">Information</Button>
+                                    </a>
+                                </div>
+                                <br>
+                                <div  class='create-account-btn'>
+                                    <a href="{% url 'aws_connection' %}">
+                                        <Button variant="primary">AWS Connection</Button>
+                                    </a>
+                                </div>
+                                <br>
+
+                                <div  class='create-account-btn'>
+                                    <a href="{% url 'show_aws_databases' %}">
+                                        <Button variant="primary">show aws databases</Button>
+                                    </a>
+                                </div>
+                                <br>
+
+                            </div>
+                            <div class='targets'>
+                                <div class='titel-target'>
+                                    <h5 class='titel'>Target <span>Targets by Recent Updates ↓</span></h5>
+                                </div>
+                                <div class='dropdown-target'></div>
+                            </div>
+
+                            <div class='content-target'>
+                                <table class='table'>
+                                    <thead>
+                                        <tr>
+                                            <th class='text-h'>Label</th>
+                                            <th class='text-h'>Date</th>
+                                            <th class='text-h'>Status</th>
+                                            <th class='text-h'></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class='text'>Slow in Employee queries</td>
+                                            <td class='text'>Jan 9, 2021</td>
+                                            <td class='text'><div class='slow'>Slow Queries</div></td>
+                                            <td class='text'>View</td>
+                                        </tr>
+                                        <tr>
+                                            <td class='text'>DB Server Stability</td>
+                                            <td class='text'>Sep 21, 2020</td>
+                                            <td class='text'><div class='text-healthy'>Healthy</div></td>
+                                            <td class='text'>View</td>
+                                        </tr>
+                                        <tr>
+                                            <td class='text'>EMP_SALARY view dropped</td>
+                                            <td class='text'>Feb 27, 2021</td>
+                                            <td class='text'><div class='text-alarms'>Alarms</div></td>
+                                            <td class='text'>View</td>
+                                        </tr>
+                                        <tr>
+                                            <td class='text'>DB Jobs</td>
+                                            <td class='text'>May 2, 2022</td>
+                                            <td class='text'><div class='text-healthy'>Healthy</div></td>
+                                            <td class='text'>View</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class='paginations'>
+                                <div class='titel-pagination'>
+                                    <h5 class='titel'>Showing 1 to 7 of 50 entries</h5>
+                                </div>
+                                <div class='pagination'></div>
+                            </div>
+                        </div>
+
+                        <div class='bottom-section'>
+                            <div class='all-sections'>
+                                <div class='section-1'>
+                                    <div class='row'>
+                                        <div class='col-md-12 btns-section'>
+                                        
+                                            <button class='btn-s btn btn-outline-light'>DB Overview</button>
+                                            <button class='btn-section btn btn-outline-light'>Metrics</button>
+                                            <button class='btn-section btn btn-outline-light'>Config</button>
+                                            <button class='btn-section btn btn-outline-light'>Replication</button>
+                                            <button class='btn-section btn btn-outline-light'>Slow Queries</button>
+                                            <button class='btn-section btn btn-outline-light'>Alarms</button>
+                                            <button class='btn-section btn btn-outline-light'>Advisors</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class='sections row'>
+                                    <div class='section-2 col-lg-7 col-11'>
+                                        <div class='title'>
+                                            <div class='text'>
+                                                <h5>Database in RDS Service</h5>
+                                                <p>More than 3+ new DB services</p>
+                                            </div>
+                                            <div class='btn-s'>
+                                               <button class='btn-section-2 btn btn-outline-light'>Add Product</button>
+                                            </div>
+                                        </div>
+                                        <table class='table'>
+                                            <tbody>
+                                                <tr>
+                                                    <td class='text text-border'>Build web and mobile applications</td>
+                                                    <td class='text text-border'>
+                                                        <div>Rating</div>
+                                                        <div>
+                                                            <i class="star-gold fa-solid fa-star"></i>
+                                                            <i class="star-gold fa-solid fa-star"></i>
+                                                            <i class="star-gold fa-solid fa-star"></i>
+                                                            <i class="star-gold fa-solid fa-star"></i>
+                                                            <i class="star-gold fa-solid fa-star"></i>
+                                                        </div>
+                                                    </td>
+                                                    <td class='text text-border'><i class="arrow fa-solid fa-arrow-right"></i></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class='text text-border'>Move to managed databases</td>
+                                                    <td class='text text-border'>
+                                                        <div>Rating</div>
+                                                        <div>
+                                                            <i class="star-gold fa-solid fa-star"></i>
+                                                            <i class="star-gold fa-solid fa-star"></i>
+                                                            <i class="star-gold fa-solid fa-star"></i>
+                                                            <i class="star-gold fa-solid fa-star"></i>
+                                                            <i class="star-sold fa-solid fa-star"></i>
+                                                        </div>
+                                                    </td>
+                                                    <td class='text text-border'><i class="arrow fa-solid fa-arrow-right"></i></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class='text text-border'>Break free from legacy databases</td>
+                                                    <td class='text text-border'>
+                                                        <div>Rating</div>
+                                                        <div>
+                                                            <i class="star-gold fa-solid fa-star"></i>
+                                                            <i class="star-gold fa-solid fa-star"></i>
+                                                            <i class="star-gold fa-solid fa-star"></i>
+                                                            <i class="star-sold fa-solid fa-star"></i>
+                                                            <i class="star-sold fa-solid fa-star"></i>
+                                                        </div>
+                                                    </td>
+                                                    <td class='text text-border'><i class="arrow fa-solid fa-arrow-right"></i></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class='section-3 col-lg-4 col-4'>
+                                        <div class='count-info'>
+                                            <div class='icon'><i class="fa-solid fa-table"></i></div>
+                                            <div class='count'>400</div>
+                                            <div class='name'><p>Table</p></div>
+                                        </div>
+                                        <div class='count-info'>
+                                            <div class='icon'><i class="fa-solid fa-expand"></i></div>
+                                            <div class='count'>560</div>
+                                            <div class='name'><p>View</p></div>
+                                        </div>
+                                        <div class='count-info'>
+                                            <div class='icon'><i class="fa-solid fa-gear"></i></div>
+                                            <div class='count'>1250</div>
+                                            <div class='name'><p>Functions</p></div>
+                                        </div>
+                                        <div class='count-info'>
+                                            <div class='icon'><i class="fa-solid fa-table"></i></div>
+                                            <div class='count'>900</div>
+                                            <div class='name'><p>Producers</p></div>
+                                        </div>
+                                        <div class='count-info'>
+                                            <div class='icon'><i class="fa-solid fa-table"></i></div>
+                                            <div class='count'>3400</div>
+                                            <div class='name'><p>Trigger</p></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> <!-- bottom-section end -->
+                    </div> <!-- main-content-data end -->
+                </div> <!-- row end -->
+            </div> <!-- main-page-content end -->
+        </div> <!-- color end -->
+    </div> <!-- content end -->
+</div> <!-- main-database_pages end -->
+
+{% endblock %}

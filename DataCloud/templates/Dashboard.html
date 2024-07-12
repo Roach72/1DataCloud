@@ -1,0 +1,118 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<head>
+  <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+</head>
+<div class='container-fluid dashboard row'>
+  <div class='side-bar col-1'>
+      <div class='logo'>
+          <img src="{% static 'image/dashboard/l-1.png' %}" alt="logo"/>
+      </div>
+      <div class='settings'>
+          <img src="{% static 'image/dashboard/Settings.png' %}" alt="Settings"/>
+      </div>
+  </div>
+  <div class='content col-11'>
+      <div class='color'>
+          <div class='nav-bar'>
+
+            <nav class="navbar navbar-expand-lg">
+              <div class="container-fluid">
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="body-nav collapse navbar-collapse" id="navbarSupportedContent">
+
+                  <form class="d-flex" role="search">
+                    <input class="search-body form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                  </form>
+                  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                      <a class="nav-link" href="#"><i class="icon-form fa-solid fa-magnifying-glass"></i></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#"><i class="icon fa-solid fa-exclamation"></i></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#"><i class="fa-solid fa-bell"></i></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#"><i class="fa-solid fa-calendar"></i></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#"><i class="fa-solid fa-moon"></i></a>
+                    </li>
+                    {% if user.is_authenticated %}
+                      <li class="nav-item">
+                        <a class="nav-link" href="{% url 'Logout' %}"><i class="fa-solid fa-right-from-bracket"></i></a>
+                      </li>
+                    {% else %}
+                      <li class="nav-item">
+                        <a class="nav-link" href="{% url 'Login' %}"><i class="fa-solid fa-right-to-bracket"></i></a>
+                      </li>
+                    {% endif %}
+
+                  </ul>
+                </div>
+                <a class="navbar-brand" href="#">1DataCloud</a>
+                <img class="acount-img" src="{% static 'image/dashboard/p.jpg' %}" alt="Settings"/>
+
+              </div>
+            </nav>
+
+          <!----
+            <nav class="navbar navbar-expand-lg">
+              <div class="container-fluid ">
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <form class="d-flex" role="search">
+                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-outline-success" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </form>
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fa-solid fa-exclamation"></i></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fa-solid fa-bell"></i></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fa-solid fa-calendar"></i></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fa-solid fa-moon"></i></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fa-solid fa-right-from-bracket"></i></a>
+                  </li>
+                </ul>
+            </div>
+                <a class="navbar-brand" href="#">Navbar</a>
+                <img class="acount-img" src="{% static 'image/dashboard/p.jpg' %}" alt="Settings"/>
+
+              </div>
+            </nav>
+           -->
+          </div>
+          <div class='center'>
+              <div class='titel'>
+                  <h3>Welcome Abdulrahman!</h3>
+              </div>
+              <div class='text'>
+                  <h2>Connect Database to Start</h2>
+              </div>
+              <div class='connect-database-btn'>
+                  <a href="{% url 'AWS' %}">
+                     <Button variant="primary">Connect Database</Button>
+                  </a >
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+{% endblock %}

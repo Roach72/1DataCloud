@@ -1,0 +1,106 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+<head>
+    <link rel="stylesheet" href="{% static 'css/auth/register.css' %}">
+</head>
+<body>
+    <div class="container-fluid">
+        <div  class="main-page-login ">
+            <div class="row">
+                <div class='logo-section col-lg-5 col-12'>
+                    <div class='logo-grope'>
+                        <div class='logo'>
+                         <img src="{% static 'image/logo/c-1.png' %}"  alt="logo"/> 
+                        </div>
+                        <div class='title'>
+                            <div class='text'><h5>Hybrid-cloud Database</h5></div>
+                            <div class='h'><h4>MANAGEMENT</h4></div>
+                        </div>
+                    </div>
+                    <div class='bow'>
+                       <img src="{% static 'image/logo/r-1.png' %}" alt="bow"/>
+                    </div>
+
+                    <div class='buttom-img '>
+                      <img src="{% static 'image/logo/g.png' %}" alt="buttom_img"/>
+                    </div>
+                </div>
+
+                <div  class='formLogin-section col-lg-7 col-12'>
+                    <div  class='color'>
+                        <div  class='titel'>
+                            <h3 class='welcome'>Welcome to Start</h3>
+                        </div>
+                        <div  class='text'>
+                            <h6 class="new-here">New Here? <a class="create-account-top" href="{% url 'Dashboard' %}">Dashboard</a></h6>
+                        </div>
+
+                        <div  class='mine-body'>
+                            <div  class='form'>
+                                <div  class='mine-body-text'>
+                                    <h4>Crerat Acount</h4>
+                                </div>
+
+                                <div class='body'>
+                                    <form method="post">
+                                        {% csrf_token %}
+                                    <div class="row">
+                                            <div class="col-md-6">
+                                                {{ form.username }}
+                                            </div>
+                                            <br />
+                                            <br />
+                                            <div class="col-md-6">
+                                                {{ form.email }}
+                                            </div>
+                                            <br />
+                                            <br />
+                                            <div class="col-md-6">
+                                                {{ form.first_name }}
+
+                                            </div>
+                                            <br />
+                                            <br />
+                                            <div class="col-md-6">
+                                                {{ form.last_name }}
+
+                                            </div>
+                                            <br />
+                                            <br />
+                                            <div class="col-md-6">
+                                                {{ form.password1 }}
+                                                {% if form.password1.help_text %}
+                                                <small class="form-text text-muted" id="password1_help">{{ form.password1.help_text|safe }}</small>
+                                            {% endif %}
+                                            </div>
+                                            <br />
+                                            <br />
+                                            <div class="col-md-6">
+                                                {{ form.password2 }}
+                                            </div>
+                                            <br />
+                                            <br />
+                                        </div>
+                                        <div  class='login-btn'>
+                                            <Button type='submit'>Sign Up</Button>
+                                        </div>
+                                    </form>
+                                </div>
+
+                                <div  class='google-btn'>
+                                    <Button variant="primary"><img src="{% static 'image/login-page/form/google.png' %}" alt="google" /> Or Sign in with Google</Button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+{% endblock %}
